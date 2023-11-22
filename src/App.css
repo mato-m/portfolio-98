@@ -1,0 +1,85 @@
+html,
+body {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  width: 100%;
+  height: 100%;
+  background-color: #008080;
+  overflow: hidden;
+}
+span.active {
+  background-color: #e0e0e0;
+  font-weight: bolder;
+  border-top-color: #000 !important;
+  border-left-color: #000 !important;
+  border-bottom-color: #fff !important;
+  border-right-color: #fff !important;
+}
+/* width */
+::-webkit-scrollbar {
+  width: 18px;
+  background-color: #e0e0e0;
+  border-left: solid #000 1px;
+}
+
+/* Handle */
+::-webkit-scrollbar-thumb {
+  background: #c2c2c2;
+  border: solid #000 1px;
+}
+.desktopNaslov {
+  font-size: 6rem;
+  text-align: center;
+}
+.desktopNaslov > * {
+  margin: 0 !important;
+}
+@media screen and (max-width: 768px) {
+  .draggableDivContact {
+    max-width: 90% !important;
+    top: 10px !important;
+    left: 20px !important;
+  }
+  .draggableDivProjects {
+    max-width: 90% !important;
+    top: 140px !important;
+    left: 20px !important;
+  }
+  .draggableDivAbout {
+    max-width: 90% !important;
+    max-height: 80% !important;
+    top: 280px !important;
+    left: 20px !important;
+  }
+  .desktopNaslov {
+    font-size: 3rem;
+  }
+  .taskbar span {
+    width: 80px !important;
+  }
+}
+@media screen and (max-width: 500px) {
+  .startDiv {
+    padding: 5px !important;
+    width: 100% !important;
+    bottom: 86px !important;
+  }
+  .startDiv > img {
+    width: 80px !important;
+    height: 80px !important;
+  }
+  .desktopNaslov {
+    font-size: 1.5rem;
+  }
+  .taskbar {
+    height: auto !important;
+    align-items: center !important;
+  }
+  .taskbar > div {
+    flex-direction: column;
+  }
+  .taskbar > div > span {
+    margin-left: 0 !important;
+  }
+}
