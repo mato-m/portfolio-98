@@ -1,6 +1,11 @@
 import React from "react";
 
-const Taskbar = ({ activeButton, setActiveButton }) => {
+const Taskbar = ({
+  activeButton,
+  setActiveButton,
+  startOpen,
+  setStartOpen,
+}) => {
   return (
     <div
       className="taskbar"
@@ -30,14 +35,14 @@ const Taskbar = ({ activeButton, setActiveButton }) => {
           onClick={(e) => {
             e.preventDefault();
             const startDiv = document.querySelector(".startDiv");
-            if (activeButton === "start") {
+            if (startOpen) {
               startDiv.style.display = "none";
             } else {
               startDiv.style.display = "flex";
             }
-            setActiveButton(activeButton === "start" ? "" : "start");
+            setStartOpen(!startOpen);
           }}
-          className={activeButton === "start" ? "active" : ""}
+          className={startOpen ? "active" : ""}
           style={{
             border: "solid transparent 2px",
             borderLeftColor: "#fff",
@@ -82,6 +87,7 @@ const Taskbar = ({ activeButton, setActiveButton }) => {
               ).firstChild.style.background =
                 "linear-gradient(to right, #6e6e6e, #888888)";
             }
+            setStartOpen(false);
             setActiveButton(activeButton === "about" ? "" : "about");
           }}
           className={activeButton === "about" ? "active" : ""}
@@ -134,6 +140,7 @@ const Taskbar = ({ activeButton, setActiveButton }) => {
               ).firstChild.style.background =
                 "linear-gradient(to right, #6e6e6e, #888888)";
             }
+            setStartOpen(false);
             setActiveButton(activeButton === "projects" ? "" : "projects");
           }}
           className={activeButton === "projects" ? "active" : ""}
@@ -184,6 +191,7 @@ const Taskbar = ({ activeButton, setActiveButton }) => {
               ).firstChild.style.background =
                 "linear-gradient(to right, #6e6e6e, #888888)";
             }
+            setStartOpen(false);
             setActiveButton(activeButton === "kontakt" ? "" : "kontakt");
           }}
           className={activeButton === "kontakt" ? "active" : ""}

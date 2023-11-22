@@ -1,19 +1,38 @@
 import React, { useState } from "react";
 import Draggable from "react-draggable";
 
-const About = ({ activeButton, setActiveButton }) => {
+const About = ({ activeButton, setActiveButton, startOpen, setStartOpen }) => {
   const [isDragging, setIsDragging] = useState(false);
   return (
     <Draggable
       defaultClassName="draggableDivAbout"
       bounds="parent"
       handle=".drag-handle"
-      onStart={() => setIsDragging(true)}
+      onStart={() => {
+        setStartOpen(false);
+        document.querySelector(".draggableDivAbout").style.zIndex = 9999;
+        document.querySelector(".draggableDivProjects").style.zIndex = 9998;
+        document.querySelector(".draggableDivContact").style.zIndex = 9998;
+        document.querySelector(
+          ".draggableDivAbout"
+        ).firstChild.style.background =
+          "linear-gradient(to right, #000080, #1174B6)";
+        document.querySelector(
+          ".draggableDivProjects"
+        ).firstChild.style.background =
+          "linear-gradient(to right, #6e6e6e, #888888)";
+        document.querySelector(
+          ".draggableDivContact"
+        ).firstChild.style.background =
+          "linear-gradient(to right, #6e6e6e, #888888)";
+        setActiveButton("about");
+        setIsDragging(true);
+      }}
       onStop={() => setIsDragging(false)}
     >
       <div
-        onClick={() => {
-          document.querySelector(".startDiv").style.display = "none";
+        onMouseDownCapture={() => {
+          setStartOpen(false);
           document.querySelector(".draggableDivAbout").style.zIndex = 9999;
           document.querySelector(".draggableDivProjects").style.zIndex = 9998;
           document.querySelector(".draggableDivContact").style.zIndex = 9998;

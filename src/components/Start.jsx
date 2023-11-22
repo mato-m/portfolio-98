@@ -1,6 +1,6 @@
 import React from "react";
 
-const Start = () => {
+const Start = ({ startOpen }) => {
   return (
     <div
       className="startDiv"
@@ -9,7 +9,7 @@ const Start = () => {
         bottom: 40,
         left: 0,
         background: "#c2c2c2",
-        display: "none",
+        display: startOpen ? "flex" : "none",
         border: "solid transparent 2px",
         borderLeftColor: "#fff",
         borderTopColor: "#fff",

@@ -4,7 +4,12 @@ import Contact from "./Contact";
 import Projects from "./Projects";
 import Start from "./Start";
 
-const Desktop = ({ activeButton, setActiveButton }) => {
+const Desktop = ({
+  activeButton,
+  setActiveButton,
+  startOpen,
+  setStartOpen,
+}) => {
   return (
     <div
       style={{
@@ -15,10 +20,25 @@ const Desktop = ({ activeButton, setActiveButton }) => {
         alignItems: "center",
       }}
     >
-      <Start />
-      <About activeButton={activeButton} setActiveButton={setActiveButton} />
-      <Projects activeButton={activeButton} setActiveButton={setActiveButton} />
-      <Contact activeButton={activeButton} setActiveButton={setActiveButton} />
+      <Start startOpen={startOpen} />
+      <About
+        activeButton={activeButton}
+        setActiveButton={setActiveButton}
+        startOpen={startOpen}
+        setStartOpen={setStartOpen}
+      />
+      <Projects
+        activeButton={activeButton}
+        setActiveButton={setActiveButton}
+        startOpen={startOpen}
+        setStartOpen={setStartOpen}
+      />
+      <Contact
+        activeButton={activeButton}
+        setActiveButton={setActiveButton}
+        startOpen={startOpen}
+        setStartOpen={setStartOpen}
+      />
       <div className="desktopNaslov">
         <h1>MATO</h1>
         <h2>Software developer</h2>

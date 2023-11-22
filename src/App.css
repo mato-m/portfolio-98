@@ -30,6 +30,7 @@ span.active {
 }
 .desktopNaslov {
   font-size: 6rem;
+  user-select: none;
   text-align: center;
 }
 .desktopNaslov > * {
